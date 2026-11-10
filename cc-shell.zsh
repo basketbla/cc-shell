@@ -53,5 +53,5 @@ cc-open() { claude --resume $CC_SHELL_SESSION; }
 # Start a fresh conversation.
 cc-new() { CC_SHELL_SESSION=$(uuidgen | tr A-Z a-z); _ccsh_started=0; print "new Claude session"; }
 
-PS1="%F{208}cc%f $PS1"
+PS1="%F{208}cc-shell%f $PS1"
 print -P "%F{208}cc-shell%f: commands run as usual, anything else goes to Claude. %F{8}?text forces Claude · cc-new · cc-open · exit%f"

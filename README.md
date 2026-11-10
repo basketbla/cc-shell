@@ -4,9 +4,9 @@ Your normal zsh, but any line that isn't a shell command goes to Claude Code, an
 
 ```
 cc-shell
-cc ➜ ~ git status                 # runs as usual
-cc ➜ ~ why is the build failing   # goes to Claude, reply prints right here
-cc ➜ ~ ?find the flaky test       # leading ? forces Claude
+cc-shell ➜ ~ git status                 # runs as usual
+cc-shell ➜ ~ why is the build failing   # goes to Claude, reply prints right here
+cc-shell ➜ ~ ?find the flaky test       # leading ? forces Claude
 ```
 
 - One Claude session per `cc-shell`. Every message continues it, and it follows you as you `cd`.
