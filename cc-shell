@@ -1,0 +1,14 @@
+#!/bin/zsh
+# cc-shell: your normal zsh, but any line that isn't a command goes to Claude Code.
+here=${0:A:h}
+zd=$(mktemp -d -t cc-shell)
+cat > $zd/.zshenv <<ZE
+[[ -f \$HOME/.zshenv ]] && source \$HOME/.zshenv
+ZE
+cat > $zd/.zshrc <<ZR
+ZDOTDIR=\$HOME
+[[ -f \$HOME/.zshrc ]] && source \$HOME/.zshrc
+source ${(q)here}/cc-shell.zsh
+ZR
+CC_SHELL_SESSION=$(uuidgen | tr A-Z a-z) CC_SHELL_HOME=$here ZDOTDIR=$zd zsh -i
+rm -rf $zd
